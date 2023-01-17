@@ -1,0 +1,583 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix wb: <http://worldbank.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://worldbank.org/> .
+
+
+<TriplesMapWorldbank_API_3_MetaDataIndicator>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Indicator_API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Indicator/{INDICATOR_CODE}" ;
+    rr:class wb:Indicator ];
+  
+  # Map the indicator code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "INDICATOR_CODE" ]
+  ];
+
+  # Map the indicator name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "INDICATOR_NAME" ; rr:language "en" ]
+  ];
+  
+  # Map the source note to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SOURCE_NOTE" ; rr:language "en" ]
+  ];
+
+  # Map the source organization to dcterms:publisher
+  rr:predicateObjectMap [ 
+    rr:predicate dcterms:publisher ;
+    rr:objectMap [ rml:reference "SOURCE_ORGANIZATION" ; rr:language "en" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:object wb:economy-and-growth 
+  ].
+
+
+<TriplesMapWorldbank_API_3_MetaDataCountry>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Country_API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ;
+    rr:class wb:Country ];
+  
+  # Map the country code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "Country Code" ]
+  ];
+  
+  # Map the region to dbo:region
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:region ;
+    rr:objectMap [ rml:reference "Region" ; rr:language "en" ]
+  ];
+
+  # Map the income group to dbo:income
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:income ;
+    rr:objectMap [ rml:reference "IncomeGroup" ; rr:language "en" ]
+  ];
+
+  # Map the special notes to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SpecialNotes" ; rr:language "en" ]
+  ];
+
+  # Map the country name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "TableName" ; rr:language "en" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_MetaDataIndicator>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Indicator_API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Indicator/{INDICATOR_CODE}" ;
+    rr:class wb:Indicator ];
+  
+  # Map the indicator code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "INDICATOR_CODE" ]
+  ];
+
+  # Map the indicator name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "INDICATOR_NAME" ; rr:language "en" ]
+  ];
+  
+  # Map the source note to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SOURCE_NOTE" ; rr:language "en" ]
+  ];
+
+  # Map the source organization to dcterms:publisher
+  rr:predicateObjectMap [ 
+    rr:predicate dcterms:publisher ;
+    rr:objectMap [ rml:reference "SOURCE_ORGANIZATION" ; rr:language "en" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:object wb:energy-and-mining 
+  ].
+
+
+<TriplesMapWorldbank_API_5_MetaDataCountry>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Country_API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ;
+    rr:class wb:Country ];
+  
+  # Map the country code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "Country Code" ]
+  ];
+  
+  # Map the region to dbo:region
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:region ;
+    rr:objectMap [ rml:reference "Region" ; rr:language "en" ]
+  ];
+
+  # Map the income group to dbo:income
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:income ;
+    rr:objectMap [ rml:reference "IncomeGroup" ; rr:language "en" ]
+  ];
+
+  # Map the special notes to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SpecialNotes" ; rr:language "en" ]
+  ];
+
+  # Map the country name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "TableName" ; rr:language "en" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_MetaDataIndicator>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Indicator_API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Indicator/{INDICATOR_CODE}" ;
+    rr:class wb:Indicator ];
+  
+  # Map the indicator code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "INDICATOR_CODE" ]
+  ];
+
+  # Map the indicator name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "INDICATOR_NAME" ; rr:language "en" ]
+  ];
+  
+  # Map the source note to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SOURCE_NOTE" ; rr:language "en" ]
+  ];
+
+  # Map the source organization to dcterms:publisher
+  rr:predicateObjectMap [ 
+    rr:predicate dcterms:publisher ;
+    rr:objectMap [ rml:reference "SOURCE_ORGANIZATION" ; rr:language "en" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:object wb:health 
+  ].
+
+
+<TriplesMapWorldbank_API_8_MetaDataCountry>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Country_API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ;
+    rr:class wb:Country ];
+  
+  # Map the country code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "Country Code" ]
+  ];
+  
+  # Map the region to dbo:region
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:region ;
+    rr:objectMap [ rml:reference "Region" ; rr:language "en" ]
+  ];
+
+  # Map the income group to dbo:income
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:income ;
+    rr:objectMap [ rml:reference "IncomeGroup" ; rr:language "en" ]
+  ];
+
+  # Map the special notes to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SpecialNotes" ; rr:language "en" ]
+  ];
+
+  # Map the country name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "TableName" ; rr:language "en" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_MetaDataIndicator>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Indicator_API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Indicator/{INDICATOR_CODE}" ;
+    rr:class wb:Indicator ];
+  
+  # Map the indicator code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "INDICATOR_CODE" ]
+  ];
+
+  # Map the indicator name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "INDICATOR_NAME" ; rr:language "en" ]
+  ];
+  
+  # Map the source note to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SOURCE_NOTE" ; rr:language "en" ]
+  ];
+
+  # Map the source organization to dcterms:publisher
+  rr:predicateObjectMap [ 
+    rr:predicate dcterms:publisher ;
+    rr:objectMap [ rml:reference "SOURCE_ORGANIZATION" ; rr:language "en" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:object wb:poverty 
+  ].
+
+
+<TriplesMapWorldbank_API_11_MetaDataCountry>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Country_API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ;
+    rr:class wb:Country ];
+  
+  # Map the country code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "Country Code" ]
+  ];
+  
+  # Map the region to dbo:region
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:region ;
+    rr:objectMap [ rml:reference "Region" ; rr:language "en" ]
+  ];
+
+  # Map the income group to dbo:income
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:income ;
+    rr:objectMap [ rml:reference "IncomeGroup" ; rr:language "en" ]
+  ];
+
+  # Map the special notes to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SpecialNotes" ; rr:language "en" ]
+  ];
+
+  # Map the country name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "TableName" ; rr:language "en" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_MetaDataIndicator>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Indicator_API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Indicator/{INDICATOR_CODE}" ;
+    rr:class wb:Indicator ];
+  
+  # Map the indicator code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "INDICATOR_CODE" ]
+  ];
+
+  # Map the indicator name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "INDICATOR_NAME" ; rr:language "en" ]
+  ];
+  
+  # Map the source note to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SOURCE_NOTE" ; rr:language "en" ]
+  ];
+
+  # Map the source organization to dcterms:publisher
+  rr:predicateObjectMap [ 
+    rr:predicate dcterms:publisher ;
+    rr:objectMap [ rml:reference "SOURCE_ORGANIZATION" ; rr:language "en" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:object wb:climate-change 
+  ].
+
+
+<TriplesMapWorldbank_API_19_MetaDataCountry>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Country_API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ;
+    rr:class wb:Country ];
+  
+  # Map the country code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "Country Code" ]
+  ];
+  
+  # Map the region to dbo:region
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:region ;
+    rr:objectMap [ rml:reference "Region" ; rr:language "en" ]
+  ];
+
+  # Map the income group to dbo:income
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:income ;
+    rr:objectMap [ rml:reference "IncomeGroup" ; rr:language "en" ]
+  ];
+
+  # Map the special notes to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SpecialNotes" ; rr:language "en" ]
+  ];
+
+  # Map the country name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "TableName" ; rr:language "en" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_MetaDataIndicator>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Indicator_API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Indicator/{INDICATOR_CODE}" ;
+    rr:class wb:Indicator ];
+  
+  # Map the indicator code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "INDICATOR_CODE" ]
+  ];
+
+  # Map the indicator name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "INDICATOR_NAME" ; rr:language "en" ]
+  ];
+  
+  # Map the source note to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SOURCE_NOTE" ; rr:language "en" ]
+  ];
+
+  # Map the source organization to dcterms:publisher
+  rr:predicateObjectMap [ 
+    rr:predicate dcterms:publisher ;
+    rr:objectMap [ rml:reference "SOURCE_ORGANIZATION" ; rr:language "en" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:object wb:trade 
+  ].
+
+
+<TriplesMapWorldbank_API_21_MetaDataCountry>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./Metadata_Country_API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ;
+    rr:class wb:Country ];
+  
+  # Map the country code to dc:identifier
+  rr:predicateObjectMap [ 
+    rr:predicate dc:identifier ;
+    rr:objectMap [ rml:reference "Country Code" ]
+  ];
+  
+  # Map the region to dbo:region
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:region ;
+    rr:objectMap [ rml:reference "Region" ; rr:language "en" ]
+  ];
+
+  # Map the income group to dbo:income
+  rr:predicateObjectMap [ 
+    rr:predicate dbo:income ;
+    rr:objectMap [ rml:reference "IncomeGroup" ; rr:language "en" ]
+  ];
+
+  # Map the special notes to skos:note
+  rr:predicateObjectMap [ 
+    rr:predicate skos:note ;
+    rr:objectMap [ rml:reference "SpecialNotes" ; rr:language "en" ]
+  ];
+
+  # Map the country name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "TableName" ; rr:language "en" ]
+  ].
+
+
+<Wikidata_DBpedia_MetaDataCountry>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./wikidata_dbpedia.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code 3}" ; ];
+
+  # Map the special notes to WikiData data
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs ;
+    rr:objectMap [ rr:template "http://worldbank.org/Country/{Country Code 2}" ]
+  ];
+
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs;
+    rr:objectMap [rr:template "http://data.coypu.org/country/{Country Code 3}" ]
+  ];
+
+  # Map the special notes to WikiData data
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs ;
+    rr:objectMap [ rr:template "{WikiData}" ]
+  ];
+
+  # Map the country name to DBpedia data
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs ;
+    rr:objectMap [ rr:template "{DBpedia}" ]
+  ].
+
+

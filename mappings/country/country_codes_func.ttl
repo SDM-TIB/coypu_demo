@@ -1,0 +1,91 @@
+@prefix : <https://mappings.coypu.org/countrycode#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix lcc-3166-1: <https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/> .
+@prefix coy: <https://schema.coypu.org/global#> .
+@prefix func: <https://mappings.coypu.org/func#> .
+
+
+:Wikidata_DBpedia_MetaDataCountry a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    # relative or absolute path w.r.t config file
+    rml:source "../data/countries_all_codes_and_wiki_dbp.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://data.coypu.org/country/{UNTERM English Short}"];
+
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs ;
+    rr:objectMap [ rr:template "http://data.coypu.org/country/{ISO3166-1-Alpha-2}" ]
+  ];
+
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs;
+    rr:objectMap [rr:template "http://data.coypu.org/country/{ISO3166-1-Alpha-3}" ]
+  ];
+
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs;
+    rr:objectMap [rr:template "http://data.coypu.org/country/{official_name_en}" ]
+  ];
+
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs;
+    rr:objectMap [rr:template "http://data.coypu.org/country/{UNTERM English Formal}" ]
+  ];
+
+  rr:predicateObjectMap [ 
+    rr:predicate coy:hasAlternateName;
+    rr:objectMap <lower_function>;
+  ];
+
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs;
+    rr:objectMap [rr:template "https://sws.geonames.org/{Geoname ID}" ]
+  ];
+
+  # Map the special notes to WikiData data
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs ;
+    rr:objectMap [ rr:template "{Wikidata}" ]
+  ];
+
+  # Map the country name to DBpedia data
+  rr:predicateObjectMap [ 
+    rr:predicate owl:sameAs ;
+    rr:objectMap [ rr:template "{DBpedia}" ]
+  ].
+
+##########################################################################################
+######################################## Functions #######################################
+##########################################################################################
+
+<lower_function>
+    fnml:functionValue [
+        rml:logicalSource [ 
+        rml:source "../data/countries_all_codes_and_wiki_dbp.csv";
+        rml:referenceFormulation ql:CSV
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ rr:constant func:tolower]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate func:value;
+            rr:objectMap [rml:reference "UNTERM English Formal" ];
+        ];    
+    ].

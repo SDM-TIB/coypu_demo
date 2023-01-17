@@ -1,0 +1,387 @@
+@prefix : <https://mappings.coypu.org/lei#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix coy: <https://schema.coypu.org/global#> .
+@prefix gleif-L1: <https://www.gleif.org/ontology/L1/> .
+@prefix gleif-L2: <https://www.gleif.org/ontology/L2/> .
+@prefix gleif-base: <https://www.gleif.org/ontology/Base/> .
+@prefix gleif-elf: <https://www.gleif.org/ontology/EntityLegalForm/> .
+@prefix gleif-ra: <https://www.gleif.org/ontology/RegistrationAuthority/> .
+@prefix gleif-repex: <https://www.gleif.org/ontology/ReportingException/> .
+
+:Source
+      rml:source "/data/20220502-0800-gleif-goldencopy-lei2-golden-copy.csv";
+      # rml:source "/data/lei2_sample.csv";
+	  rml:referenceFormulation ql:CSV.
+
+:LegalEntityIdentifierMap a rr:TriplesMap;
+    rml:logicalSource :Source;
+    
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{LEI}"; 
+        rr:class gleif-L1:LegalEntity;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-L1:hasLegalName;
+        rr:objectMap [ rml:reference "Entity.LegalName"; rml:languageMap [
+         rml:reference "Entity.LegalName.xmllang"];
+         ];
+    ];
+    
+	 rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ rml:reference "Entity.LegalName"; rml:languageMap [
+         rml:reference "Entity.LegalName.xmllang"];
+         ];
+    ];
+	
+    rr:predicateObjectMap [
+        rr:predicate coy:hasEntityCategory;
+        rr:objectMap [rml:reference "Entity.EntityCategory"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasEntityStatus;
+        rr:objectMap [rml:reference "Entity.EntityStatus"];
+    ];
+    
+      rr:predicateObjectMap [
+        rr:predicate gleif-L1:hasCreationDate;
+        rr:objectMap [rml:reference "Entity.EntityCreationDate"; rr:datatype xsd:dataTime];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasLegalFormCode;
+        rr:objectMap [rml:reference "Entity.LegalForm.EntityLegalFormCode"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasLegalJurisdictionRegion;
+        rr:objectMap [rml:reference "Entity.LegalJurisdiction"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasRegistration;
+        rr:objectMap [rr:parentTriplesMap :RegistrationMAP;]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-L1:hasLegalAddress;
+        rr:objectMap [rr:parentTriplesMap :LegalAddressMap;];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-L1:hasHeadquartersAddress;
+        rr:objectMap [rr:parentTriplesMap :HeadquartersAddressMap;]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasEntityRegistrationInfo;
+        rr:objectMap [rr:parentTriplesMap :EntityRegistrationInfoMAP;]
+    ].
+
+:EntityRegistrationInfoMAP a rr:TriplesMap;
+    rml:logicalSource :Source;
+
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{LEI}-RAINFO";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasInitialRegistrationDate;
+        rr:objectMap [rml:reference "Registration.InitialRegistrationDate"; rr:datatype xsd:dataTime ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasLastUpdateDate;
+        rr:objectMap [rml:reference "Registration.LastUpdateDate"; rr:datatype xsd:dataTime ];
+    ];
+
+      rr:predicateObjectMap [
+        rr:predicate gleif-base:hasNextRenewalDate;
+        rr:objectMap [rml:reference "Registration.NextRenewalDate"; rr:datatype xsd:dataTime ];
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate gleif-base:hasRegistrationStatus;
+        rr:objectMap [rml:reference "Registration.RegistrationStatus"; ];
+    ];
+
+      rr:predicateObjectMap [
+        rr:predicate gleif-L1:hasManagingLOU;
+        rr:objectMap [rml:reference "Registration.ManagingLOU"; ];
+    ];
+
+       rr:predicateObjectMap [
+        rr:predicate gleif-L1:hasValidationSources;
+        rr:objectMap [rml:reference "Registration.ValidationSources"; ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasEntityValidation;
+        rr:objectMap [rr:parentTriplesMap :EntityValidationMAP;]
+    ].
+    
+
+:RegistrationMAP a rr:TriplesMap;
+    rml:logicalSource :Source;
+    
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{LEI}-RA"; 
+        rr:class gleif-L1:gleif-ra:BusinessRegistry;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasRegistrationAuthorityID;
+        rr:objectMap [ rml:reference "Entity.RegistrationAuthority.RegistrationAuthorityID"];
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate coy:hasRegistrationAuthorityEntityID;
+        rr:objectMap [ rml:reference "Entity.RegistrationAuthority.RegistrationAuthorityEntityID"];
+    ].
+
+:EntityValidationMAP a rr:TriplesMap;
+    rml:logicalSource :Source;
+    
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{LEI}-VAL"; 
+        rr:class gleif-L1:BusinessValidationIdentifier;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasValidationAuthorityID;
+        rr:objectMap [ rml:reference "Registration.ValidationAuthority.ValidationAuthorityID"];
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate coy:hasValidationAuthorityEntityID;
+        rr:objectMap [ rml:reference "Registration.ValidationAuthority.ValidationAuthorityEntityID"];
+    ].
+
+:LegalAddressMap a rr:TriplesMap;
+    rml:logicalSource :Source;
+    
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{LEI}-LA"; 
+        rr:class gleif-base:PhysicalAddress;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressNumber;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.AddressNumber"];
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressNumberWithinBuilding;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.AddressNumberWithinBuilding"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasFirstAddressLine;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.FirstAddressLine"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressLine1;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.AdditionalAddressLine.1"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressLine2;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.AdditionalAddressLine.2"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressLine3;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.AdditionalAddressLine.3"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasMailRouting;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.MailRouting"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasCity;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.City"]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasCityLocation;
+        rr:objectMap [ rr:template "http://data.coypu.org/city/{Entity.LegalAddress.City}"]
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate coy:hasSubdivision;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.Region"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasCountryLocation;
+        rr:objectMap [rr:template "http://data.coypu.org/country/{Entity.LegalAddress.Country}"]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasPostalCode;
+        rr:objectMap [ rml:reference "Entity.LegalAddress.PostalCode"];
+    ].
+
+:HeadquartersAddressMap a rr:TriplesMap;
+    rml:logicalSource :Source;
+    
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{LEI}-HQA";
+        rr:class gleif-base:PhysicalAddress;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressNumber;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.AddressNumber"];
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressNumberWithinBuilding;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.AddressNumberWithinBuilding"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasFirstAddressLine;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.FirstAddressLine"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressLine1;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.AdditionalAddressLine.1"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressLine2;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.AdditionalAddressLine.2"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasAddressLine3;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.AdditionalAddressLine.3"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasMailRouting;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.MailRouting"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasCity;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.City"]
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate coy:hasCityLocation;
+        rr:objectMap [ rr:template "http://data.coypu.org/city/{Entity.HeadquartersAddress.City}"]
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate gleif-base:hasRegion;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.Region"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasCountry;
+        rr:objectMap [ rr:template "http://data.coypu.org/country/{Entity.HeadquartersAddress.Country}"]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasCountryLocation;
+        rr:objectMap [ rr:template "http://data.coypu.org/country/{Entity.HeadquartersAddress.Country}"]
+    ];
+
+      rr:predicateObjectMap [
+        rr:predicate gleif-base:hasPostalCode;
+        rr:objectMap [ rml:reference "Entity.HeadquartersAddress.PostalCode"];
+    ].
+
+:Source1
+      rml:source "/data/20220502-0800-gleif-goldencopy-rr-golden-copy.csv";
+      # rml:source "/data/lei_rr_sample.csv";
+	  rml:referenceFormulation ql:CSV .
+
+:RelationshipMap a rr:TriplesMap;
+    rml:logicalSource :Source1;
+    
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{Relationship.StartNode.NodeID}";
+        rr:class gleif-L1:LegalEntity;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasEntityType;
+        rr:objectMap [ rml:reference "Relationship.StartNode.NodeIDType" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasRelationshipInfo;
+        rr:objectMap [ rr:parentTriplesMap :RelationshipInfoMap];
+    ].
+
+:RelationshipInfoMap a rr:TriplesMap;
+    rml:logicalSource :Source1;
+  
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{Relationship.StartNode.NodeID}-{Relationship.EndNode.NodeID}"; 
+        rr:class gleif-L2:AccountingConsolidation;
+
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-L2:hasParent;
+        rr:objectMap [ rml:reference "Relationship.EndNode.NodeID"];
+    ];
+
+     rr:predicateObjectMap [
+        rr:predicate gleif-L2:hasRelationshipType;
+        rr:objectMap [ rml:reference "Relationship.RelationshipType"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-L2:hasRelationshipStatus;
+        rr:objectMap [ rml:reference "Relationship.RelationshipStatus"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-L2:hasRelationshipPeriod;
+        rr:objectMap [ rr:parentTriplesMap :RelationshipPeriodMap;];
+    ].
+
+:RelationshipPeriodMap a rr:TriplesMap;
+    rml:logicalSource :Source1;
+  
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/lei/{Relationship.StartNode.NodeID}-{Relationship.EndNode.NodeID}-Period"; 
+        rr:class gleif-base:Period;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasStart;
+        rr:objectMap [ rml:reference "Relationship.Period.1.startDate"; rr:datatype xsd:dataTime];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-base:hasEnd;
+        rr:objectMap [ rml:reference "Relationship.Period.1.endDate"; rr:datatype xsd:dataTime];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate gleif-L2:hasRelationshipPeriodType;
+        rr:objectMap [ rml:reference "Relationship.Period.1.periodType"];
+    ].

@@ -1,0 +1,119 @@
+@prefix : <https://mappings.coypu.org/icews#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix lcc-3166-1: <https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/> .
+@prefix coy: <https://schema.coypu.org/global#> .
+
+:Source
+      # relative or absolute path w.r.t config file
+      rml:source "../data/202201-icews-events_comma.csv";
+	  rml:referenceFormulation ql:CSV.
+
+:ICEWSEventMap a rr:TriplesMap;
+    rml:logicalSource :Source;
+    
+    rr:subjectMap [
+        rr:template "https://data.coypu.org/icews/{Event ID}"; 
+        rr:class coy:SocioPoliticalEvent;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasDate;
+        rr:objectMap [ rml:reference "Event Date"];
+    ];
+    
+	 rr:predicateObjectMap [
+        rr:predicate coy:hasSource;
+        rr:objectMap [ rml:reference "Source Name"];
+    ];
+	
+    rr:predicateObjectMap [
+        rr:predicate coy:hasSourceSectors;
+        rr:objectMap [rml:reference "Source Sectors"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasSourceCountry;
+        rr:objectMap [rr:template "http://data.coypu.org/country/{Source Country}"];
+    ];
+    
+      rr:predicateObjectMap [
+        rr:predicate coy:hasDescription;
+        rr:objectMap [rml:reference "Event Text"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasCameoCode;
+        rr:objectMap [rml:reference "CAMEO Code"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasIntensity;
+        rr:objectMap [rml:reference "Intensity"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasTarget;
+        rr:objectMap [rml:reference "Target Name"]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasTargetSectors;
+        rr:objectMap [rml:reference "Target Sectors"]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasTargetCountry;
+        rr:objectMap [rr:template "http://data.coypu.org/country/{Target Country}"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasStoryId;
+        rr:objectMap [rr:template "{Story ID}"]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasPublisher;
+        rr:objectMap [rml:reference "Publisher"]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasCityLocation;
+        rr:objectMap [rr:template "http://data.coypu.org/city/{City}"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasDistrictLocation;
+        rr:objectMap [rml:reference "District"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasProvinceLocation;
+        rr:objectMap [rml:reference "Province"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasCountryLocation;
+        rr:objectMap [rr:template "http://data.coypu.org/country/{Country}"];
+        # https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasLatitude;
+        rr:objectMap [rml:reference "Latitude"];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate coy:hasLongitude;
+        rr:objectMap [rml:reference "Longitude"];
+    ].

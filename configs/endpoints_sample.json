@@ -1,0 +1,9 @@
+{
+    "https://labs.tib.eu/sdm/worldbank_endpoint/sparql": {},
+    "https://labs.tib.eu/sdm/icews_endpoint/sparql": {},
+    "https://labs.tib.eu/sdm/lei_endpoint/sparql": {},
+    "https://skynet.coypu.org/coypu-internal": {
+        "username": "Your UserName",
+        "password": "Your Password"
+    }
+}

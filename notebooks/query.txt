@@ -1,0 +1,147 @@
+PREFIX wb: <http://worldbank.org/>
+PREFIX wbi: <http://worldbank.org/Indicator/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?country_code ?country_name ?year (avg(?year_exp_WB) as ?exp_wb) (avg(?year_exp) as ?exp_wiki)
+WHERE {
+    service <https://labs.tib.eu/sdm/worldbank_endpoint/sparql>{
+    ?country a wb:Country .
+    ?country dc:identifier ?country_code .
+    ?country rdfs:label ?country_name.
+    ?country owl:sameAs ?sameAsCountry .
+    ?country wb:hasAnnualIndicatorEntry ?annualIndicator .
+    
+    ?annualIndicator wb:hasIndicator <http://worldbank.org/Indicator/SP.DYN.LE00.IN> .
+    ?annualIndicator owl:hasValue ?year_exp_WB .
+    ?annualIndicator time:year ?year .}
+    
+    Service <https://query.wikidata.org/sparql>{
+    ?sameAsCountry p:P2250 ?itemLifeExpectancy .
+    ?itemLifeExpectancy ps:P2250 ?year_exp .
+    ?itemLifeExpectancy pq:P585 ?time .
+    BIND(year(?time) AS ?year)}
+}
+GROUP BY ?country_code ?country_name ?year
+ORDER BY ?country_code
+LIMIT 10
+
+
+PREFIX wb: <http://worldbank.org/>
+PREFIX wbi: <http://worldbank.org/Indicator/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX geo: <https://www.geonames.org/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+SELECT ?year ?country_name ?country_code ((?value/?population) as ?gdp_per_capita)
+WHERE {
+  service <https://labs.tib.eu/sdm/worldbank_endpoint/sparql>{
+    ?indicator a wb:AnnualIndicatorEntry .
+    ?indicator wb:hasIndicator <http://worldbank.org/Indicator/NY.GDP.MKTP.CD> .
+    ?indicator wb:hasCountry ?country .
+    ?indicator owl:hasValue ?value .
+    ?indicator time:year ?year .
+    ?country <http://purl.org/dc/elements/1.1/identifier> ?country_code .
+    ?country rdfs:label ?country_name.}
+    
+    Service <https://query.wikidata.org/sparql>{
+    ?countryWiki p:P298 ?isoCode .
+    ?isoCode ps:P298 ?country_code .
+    ?countryWiki p:P1082 ?itemP .
+    ?itemP pq:P585 ?time.
+    ?itemP ps:P1082 ?population .
+    BIND(year(?time) AS ?year)
+    }
+}
+ORDER BY ?year ?country_code
+
+PREFIX coy: <https://schema.coypu.org/global#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+
+SELECT ?code ?year (COUNT(?iri) AS ?no_of_events) 
+WHERE {
+    ?iri a coy:Conflict .
+    ?iri coy:hasIsoCode ?code .
+    ?iri coy:hasTimestamp ?timestamp .
+    ?iri coy:hasFatalities ?fatalities .
+    BIND(year(?timestamp) as ?year)
+    
+    Service <https://query.wikidata.org/sparql>{
+    ?countryWiki p:P298 ?isoCode .
+    ?isoCode ps:P298 ?code .
+    ?countryWiki p:P1082 ?itemP .
+    ?itemP pq:P585 ?time .
+    ?itemP ps:P1082 ?population .
+    BIND(year(?time) as ?year)}
+}Group by ?code ?year
+LIMIT 2
+
+
+Prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+Prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+Prefix owl: <http://www.w3.org/2002/07/owl#> 
+Prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+Prefix geo: <http://www.opengis.net/ont/geosparql#> 
+Prefix gn: <https://www.geonames.org/ontology#> 
+Prefix wdt: <http://www.wikidata.org/prop/direct/> 
+Prefix coy: <https://schema.coypu.org/global#> 
+Prefix gleif-L1: <https://www.gleif.org/ontology/L1/> 
+Prefix gleif-L2: <https://www.gleif.org/ontology/L2/> 
+Prefix gleif-base: <https://www.gleif.org/ontology/Base/> 
+Prefix gleif-elf: <https://www.gleif.org/ontology/EntityLegalForm/> 
+Prefix gleif-ra: <https://www.gleif.org/ontology/RegistrationAuthority/> 
+Prefix gleif-repex: <https://www.gleif.org/ontology/ReportingException/> 
+
+SELECT ?EventText count(?EventId) as ?Event_Count
+{
+  ?EventId  a coy:SocioPoliticalEvent;
+            coy:hasSourceCountry ?source_country;
+            coy:hasTargetCountry ?target_country;
+            coy:hasDescription ?EventText.
+  ?source_country owl:sameAs <http://data.coypu.org/country/DEU>.
+  ?target_country owl:sameAs <http://data.coypu.org/country/FRA>.
+
+}Group By ?EventText
+Order By Desc(?Event_Count)
+LIMIT 5
+
+https://search.gleif.org/#/search/simpleSearch=
+Country with Active Status No of Employees
+
+

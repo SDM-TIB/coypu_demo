@@ -1,0 +1,3798 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix wb: <http://worldbank.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://worldbank.org/> .
+
+
+<TriplesMapWorldbank_API_3_Data_1990>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1990 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1990 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1990" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1990>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1991>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1991 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1991 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1991" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1991>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1992>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1992 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1992 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1992" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1992>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1993>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1993 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1993 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1993" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1993>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1994>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1994 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1994 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1994" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1994>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1995>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1995 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1995 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1995" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1995>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1996>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1996 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1996 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1996" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1996>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1997>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1997 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1997 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1997" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1997>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1998>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1998 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1998 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1998" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1998>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_3_Data_1999>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1999 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1999 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1999" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/economy-and-growth" ]
+  ].
+
+
+<TriplesMapWorldbank_API_3_Link_Countries_to_AnnualIndicatorEntries_1999>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_3_DS2_en_csv_v2_4363083.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/economy-and-growth/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1990>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1990 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1990 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1990" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1990>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1991>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1991 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1991 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1991" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1991>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1992>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1992 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1992 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1992" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1992>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1993>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1993 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1993 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1993" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1993>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1994>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1994 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1994 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1994" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1994>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1995>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1995 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1995 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1995" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1995>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1996>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1996 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1996 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1996" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1996>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1997>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1997 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1997 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1997" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1997>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1998>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1998 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1998 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1998" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1998>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_5_Data_1999>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1999 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1999 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1999" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/energy-and-mining" ]
+  ].
+
+
+<TriplesMapWorldbank_API_5_Link_Countries_to_AnnualIndicatorEntries_1999>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_5_DS2_en_csv_v2_4365588.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/energy-and-mining/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1990>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1990 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1990 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1990" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1990>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1991>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1991 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1991 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1991" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1991>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1992>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1992 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1992 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1992" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1992>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1993>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1993 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1993 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1993" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1993>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1994>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1994 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1994 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1994" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1994>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1995>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1995 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1995 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1995" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1995>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1996>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1996 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1996 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1996" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1996>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1997>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1997 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1997 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1997" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1997>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1998>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1998 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1998 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1998" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1998>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_8_Data_1999>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1999 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1999 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1999" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/health" ]
+  ].
+
+
+<TriplesMapWorldbank_API_8_Link_Countries_to_AnnualIndicatorEntries_1999>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_8_DS2_en_csv_v2_4357272.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/health/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1990>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1990 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1990 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1990" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1990>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1991>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1991 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1991 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1991" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1991>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1992>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1992 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1992 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1992" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1992>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1993>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1993 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1993 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1993" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1993>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1994>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1994 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1994 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1994" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1994>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1995>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1995 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1995 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1995" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1995>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1996>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1996 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1996 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1996" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1996>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1997>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1997 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1997 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1997" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1997>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1998>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1998 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1998 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1998" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1998>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_11_Data_1999>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1999 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1999 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1999" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/poverty" ]
+  ].
+
+
+<TriplesMapWorldbank_API_11_Link_Countries_to_AnnualIndicatorEntries_1999>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_11_DS2_en_csv_v2_4473687.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/poverty/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1990>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1990 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1990 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1990" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1990>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1991>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1991 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1991 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1991" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1991>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1992>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1992 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1992 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1992" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1992>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1993>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1993 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1993 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1993" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1993>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1994>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1994 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1994 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1994" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1994>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1995>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1995 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1995 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1995" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1995>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1996>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1996 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1996 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1996" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1996>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1997>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1997 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1997 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1997" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1997>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1998>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1998 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1998 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1998" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1998>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_19_Data_1999>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1999 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1999 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1999" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/climate-change" ]
+  ].
+
+
+<TriplesMapWorldbank_API_19_Link_Countries_to_AnnualIndicatorEntries_1999>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_19_DS2_en_csv_v2_4357095.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/climate-change/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1990>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1990 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1990 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1990" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1990>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1990" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1991>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1991 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1991 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1991" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1991>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1991" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1992>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1992 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1992 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1992" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1992>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1992" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1993>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1993 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1993 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1993" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1993>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1993" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1994>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1994 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1994 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1994" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1994>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1994" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1995>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1995 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1995 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1995" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1995>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1995" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1996>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1996 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1996 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1996" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1996>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1996" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1997>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1997 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1997 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1997" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1997>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1997" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1998>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1998 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1998 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1998" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1998>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1998" ] 
+    ].
+
+
+<TriplesMapWorldbank_API_21_Data_1999>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ;
+    rr:class wb:AnnualIndicatorEntry ];
+  
+  # Map the 1999 to time:year
+  rr:predicateObjectMap [ 
+    rr:predicate time:year ;
+    rr:objectMap [rr:constant 1999 ; rr:datatype xsd:integer] 
+  ];
+  
+  # Map value to owl:hasValue
+  rr:predicateObjectMap [ 
+    rr:predicate owl:hasValue ;
+    rr:objectMap [ rml:reference "1999" ; rr:datatype xsd:float]
+  ];
+  
+  # Map indicator code to wb:hasIndicator
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasIndicator ;
+    rr:objectMap [rr:template "http://worldbank.org/Indicator/{Indicator Code}" ]
+  ];
+  
+  # Map country code to wb:hasCountry
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasCountry ;
+    rr:objectMap [rr:template "http://worldbank.org/Country/{Country Code}" ]
+  ];
+  
+  # Map topic to wb:hasTopic
+  rr:predicateObjectMap [ 
+    rr:predicate wb:hasTopic ;
+    rr:objectMap [rr:template "http://worldbank.org/trade" ]
+  ].
+
+
+<TriplesMapWorldbank_API_21_Link_Countries_to_AnnualIndicatorEntries_1999>
+    a rr:TriplesMap;
+
+    # Define the data source (file location)
+    rml:logicalSource [
+      rml:source "./API_21_DS2_en_csv_v2_4358450.csv";
+      rml:referenceFormulation ql:CSV
+    ];
+
+    # Define the subject of the generated statements
+    rr:subjectMap [ rr:template "http://worldbank.org/Country/{Country Code}" ];
+
+    # Map country to wb:hasAnnualIndicatorEntry
+    rr:predicateObjectMap [ 
+      rr:predicate wb:hasAnnualIndicatorEntry ;
+      rr:objectMap [rr:template "http://worldbank.org/trade/Country/{Country Code}/Indicator/{Indicator Code}/Year/1999" ] 
+    ].
+
+

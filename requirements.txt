@@ -1,0 +1,9 @@
+DeTrusty
+rdfizer
+pandas
+plotly
+matplotlib
+dash
+jupyter-dash
+notebook
+jupyterlab

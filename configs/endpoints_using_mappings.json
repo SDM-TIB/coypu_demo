@@ -1,0 +1,19 @@
+{
+    "https://labs.tib.eu/sdm/icews_endpoint/sparql/": {
+        "mappings": [
+            "../mappings/icews/icews.ttl",
+            "../mappings/country/country_codes.ttl"
+        ]
+    },
+    "https://labs.tib.eu/sdm/lei_endpoint/sparql/": {
+        "mappings": [
+            "../mappings/lei/lei.ttl"
+        ]
+    },
+    "https://labs.tib.eu/sdm/worldbank_endpoint/sparql": {
+        "mappings": [
+            "../mappings/worldbank/worldbank_0.ttl",
+            "../mappings/worldbank/worldbank_7.ttl"
+        ]
+    }
+}
