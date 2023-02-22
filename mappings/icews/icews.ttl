@@ -16,7 +16,7 @@
 
 :Source
       # relative or absolute path w.r.t config file
-      rml:source "../data/202201-icews-events_comma.csv";
+      rml:source "data/202201-icews-events_comma.csv";
 	  rml:referenceFormulation ql:CSV.
 
 :ICEWSEventMap a rr:TriplesMap;
