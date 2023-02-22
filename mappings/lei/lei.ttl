@@ -220,7 +220,7 @@
 
     rr:predicateObjectMap [
         rr:predicate coy:hasCityLocation;
-        rr:objectMap [ rr:template "http://data.coypu.org/city/{Entity.LegalAddress.City}"]
+        rr:objectMap [ rr:template "https://data.coypu.org/city/{Entity.LegalAddress.City}"]
     ];
 
      rr:predicateObjectMap [
@@ -230,7 +230,7 @@
 
     rr:predicateObjectMap [
         rr:predicate coy:hasCountryLocation;
-        rr:objectMap [rr:template "http://data.coypu.org/country/{Entity.LegalAddress.Country}"]
+        rr:objectMap [rr:template "https://data.coypu.org/country/{Entity.LegalAddress.Country}"]
     ];
 
     rr:predicateObjectMap [
@@ -288,7 +288,7 @@
 
      rr:predicateObjectMap [
         rr:predicate coy:hasCityLocation;
-        rr:objectMap [ rr:template "http://data.coypu.org/city/{Entity.HeadquartersAddress.City}"]
+        rr:objectMap [ rr:template "https://data.coypu.org/city/{Entity.HeadquartersAddress.City}"]
     ];
 
      rr:predicateObjectMap [
@@ -298,12 +298,12 @@
 
     rr:predicateObjectMap [
         rr:predicate gleif-base:hasCountry;
-        rr:objectMap [ rr:template "http://data.coypu.org/country/{Entity.HeadquartersAddress.Country}"]
+        rr:objectMap [ rr:template "https://data.coypu.org/country/{Entity.HeadquartersAddress.Country}"]
     ];
 
     rr:predicateObjectMap [
         rr:predicate coy:hasCountryLocation;
-        rr:objectMap [ rr:template "http://data.coypu.org/country/{Entity.HeadquartersAddress.Country}"]
+        rr:objectMap [ rr:template "https://data.coypu.org/country/{Entity.HeadquartersAddress.Country}"]
     ];
 
       rr:predicateObjectMap [

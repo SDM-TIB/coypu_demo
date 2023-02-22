@@ -26,26 +26,26 @@
   ];
 
   # Define the subject of the generated statements
-  rr:subjectMap [ rr:template "http://data.coypu.org/country/{UNTERM English Short}"];
+  rr:subjectMap [ rr:template "https://data.coypu.org/country/{UNTERM English Short}"];
 
   rr:predicateObjectMap [ 
     rr:predicate owl:sameAs ;
-    rr:objectMap [ rr:template "http://data.coypu.org/country/{ISO3166-1-Alpha-2}" ]
+    rr:objectMap [ rr:template "https://data.coypu.org/country/{ISO3166-1-Alpha-2}" ]
   ];
 
   rr:predicateObjectMap [ 
     rr:predicate owl:sameAs;
-    rr:objectMap [rr:template "http://data.coypu.org/country/{ISO3166-1-Alpha-3}" ]
+    rr:objectMap [rr:template "https://data.coypu.org/country/{ISO3166-1-Alpha-3}" ]
   ];
 
   rr:predicateObjectMap [ 
     rr:predicate owl:sameAs;
-    rr:objectMap [rr:template "http://data.coypu.org/country/{official_name_en}" ]
+    rr:objectMap [rr:template "https://data.coypu.org/country/{official_name_en}" ]
   ];
 
   rr:predicateObjectMap [ 
     rr:predicate owl:sameAs;
-    rr:objectMap [rr:template "http://data.coypu.org/country/{UNTERM English Formal}" ]
+    rr:objectMap [rr:template "https://data.coypu.org/country/{UNTERM English Formal}" ]
   ];
 
   rr:predicateObjectMap [ 

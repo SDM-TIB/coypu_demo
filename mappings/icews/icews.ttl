@@ -44,7 +44,7 @@
 
     rr:predicateObjectMap [
         rr:predicate coy:hasSourceCountry;
-        rr:objectMap [rr:template "http://data.coypu.org/country/{Source Country}"];
+        rr:objectMap [rr:template "https://data.coypu.org/country/{Source Country}"];
     ];
     
       rr:predicateObjectMap [
@@ -74,7 +74,7 @@
 
     rr:predicateObjectMap [
         rr:predicate coy:hasTargetCountry;
-        rr:objectMap [rr:template "http://data.coypu.org/country/{Target Country}"];
+        rr:objectMap [rr:template "https://data.coypu.org/country/{Target Country}"];
     ];
 
     rr:predicateObjectMap [
@@ -89,7 +89,7 @@
 
     rr:predicateObjectMap [
         rr:predicate coy:hasCityLocation;
-        rr:objectMap [rr:template "http://data.coypu.org/city/{City}"];
+        rr:objectMap [rr:template "https://data.coypu.org/city/{City}"];
     ];
 
     rr:predicateObjectMap [
@@ -104,7 +104,7 @@
 
     rr:predicateObjectMap [
         rr:predicate coy:hasCountryLocation;
-        rr:objectMap [rr:template "http://data.coypu.org/country/{Country}"];
+        rr:objectMap [rr:template "https://data.coypu.org/country/{Country}"];
         # https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/
     ];
 
