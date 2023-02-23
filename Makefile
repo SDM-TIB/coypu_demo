@@ -1,4 +1,4 @@
-.PHONY: load upload preproc semantify help
+.PHONY: load upload preproc semantify help clean
 .DEFAULT_GOAL := help
 
 
@@ -17,17 +17,24 @@ help: ## dataset availabe for make icews, lei, country
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 load: ## load data and name of the dataset (e.g. make load data=icews )
-	python src/$(data)_data.py --load_data 
+	mkdir -p data/$(data)
+	python src/$(data).py --load_data 
 
 upload: ## upload data and name of the dataset (e.g. make upload data=icews )
-	python src/$(data)_data.py --upload_data
+	python src/$(data).py --upload_data
 
 preproc: ## preprocess data and name of the dataset (e.g. make preproc data=icews )
-	python src/$(data)_data.py --preproc_data
+	python src/$(data).py --preproc_data
 
 semantify: ## semantify data or create rdf KG and name of the dataset ( e.g. make semantify data=icews )
-	python src/$(data)_data.py --config_file=configs/config.ini
-	# python src/$(data)_data.py --config_file=configs/$(data)_config.ini
+	mkdir -p kgdata/${data}
+	python src/$(data).py --config_file=configs/$(data).ini
+
+clean_kg: ## delete sematified data ( e.g. make clean_kg data=icews )
+	rm -rf kgdata/$(data).nt
+
+clean_data: ## delete downloaded data ( e.g. make clean_data data=icews )
+	rm -rf data/$(data)
 
 
 

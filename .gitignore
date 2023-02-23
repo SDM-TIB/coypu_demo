@@ -10,6 +10,7 @@ rdfmts_private.json
 # ignore directory
 kgdata/
 query_results/
+data/
 
 # ignore
 __pycache__/

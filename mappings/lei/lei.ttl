@@ -20,7 +20,7 @@
 @prefix gleif-repex: <https://www.gleif.org/ontology/ReportingException/> .
 
 :Source
-      rml:source "data/20220502-0800-gleif-goldencopy-lei2-golden-copy.csv";
+      rml:source "data/lei/20220502-0800-gleif-goldencopy-lei2-golden-copy.csv";
       # rml:source "/data/lei2_sample.csv";
 	  rml:referenceFormulation ql:CSV.
 
@@ -312,7 +312,7 @@
     ].
 
 :Source1
-      rml:source "data/20220502-0800-gleif-goldencopy-rr-golden-copy.csv";
+      rml:source "data/lei/20220502-0800-gleif-goldencopy-rr-golden-copy.csv";
       # rml:source "/data/lei_rr_sample.csv";
 	  rml:referenceFormulation ql:CSV .
 
