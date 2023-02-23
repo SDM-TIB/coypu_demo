@@ -1,5 +1,7 @@
 # Coypu_demo_2023
 
+Supported dataset for RDF KG creation (icews, lei, country and worldbank)
+
 Steps to follow:
 * Get private endpoint's credentials
 * Fill credential info in [credential file](./credentials_sample.py) and rename it to `credentials.py`
