@@ -1,4 +1,4 @@
-.PHONY: load upload preproc semantify help clean
+.PHONY: load upload preproc semantify help clean-kg clean-data clean-all
 .DEFAULT_GOAL := help
 
 
@@ -30,11 +30,14 @@ semantify: ## semantify data or create rdf KG and name of the dataset ( e.g. mak
 	mkdir -p kgdata/${data}
 	python src/$(data).py --config_file=configs/$(data).ini
 
-clean_kg: ## delete sematified data ( e.g. make clean_kg data=icews )
-	rm -rf kgdata/$(data).nt
+clean-kg: ## delete sematified data ( e.g. make clean-kg data=icews )
+	cd kgdata && rm -rf $(data)
 
-clean_data: ## delete downloaded data ( e.g. make clean_data data=icews )
-	rm -rf data/$(data)
+clean-data: ## delete downloaded data ( e.g. make clean-data data=icews )
+	cd data && rm -rf $(data)
+
+clean-all: clean-kg clean-data ## deleted downloaded data and rdf data (e.g. make clean-all data=icews)
+	
 
 
 
