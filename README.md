@@ -1,4 +1,4 @@
-# coypu_demo_2023
+# Coypu_demo_2023
 
 Steps to follow:
 * Get private endpoint's credentials
