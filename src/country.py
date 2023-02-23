@@ -14,14 +14,14 @@ def load_data(*args, **kwargs):
     try:
         pass
     except Exception as e:
-        pass
+        print("Error: ", e)
     
 @timer   
 def preprocess_data(*args, **kwargs):
     try:
         pass
     except Exception as e:
-        pass
+        print("Error: ", e)
 
 @timer
 def semantify_data(config_file, *args, **kwargs):

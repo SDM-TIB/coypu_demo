@@ -18,7 +18,7 @@ help: ## dataset availabe for make icews, lei, country
 
 load: ## load data and name of the dataset (e.g. make load data=icews )
 	mkdir -p data/$(data)
-	python src/$(data).py --load_data 
+	python src/$(data).py --load_data --load_path=data/$(data)
 
 upload: ## upload data and name of the dataset (e.g. make upload data=icews )
 	python src/$(data).py --upload_data
