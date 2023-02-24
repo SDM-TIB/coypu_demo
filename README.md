@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ## Make Commands
 ```
-help                 dataset availabe for make icews, lei, country
+help                 dataset availabe for make commands icews, lei, country
 load                 load data (e.g. make load data=icews )
 upload               upload data, location tib, skynet (e.g. make upload data=icews )
 preproc              preprocess data (e.g. make preproc data=icews )
