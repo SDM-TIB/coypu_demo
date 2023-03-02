@@ -28,16 +28,24 @@ class SPARQLRequest():
                    
     @auth
     def __set_params(self, accept_type='text/csv', *args, **kwargs):
-        if self.auth_type:
+        if self.auth_type and self.is_fdq:
+            print('auth_type and is_fdq')
+            self.headers = {'Content-Type': 'application/x-www-form-urlencoded',
+                       'Authorization':self.auth}
+        elif  self.auth_type:
+            print('auth_type')
             self.headers = {'Content-Type': 'application/sparql-query', 'Accept': accept_type,
                        'Authorization':self.auth}
         elif self.is_fdq:
+            print('is_fdq')
             self.headers = {'Content-Type': 'application/x-www-form-urlencoded'}
         else:
             self.headers = {'Content-Type': 'application/x-www-form-urlencoded', 'Accept': accept_type}
+        # print(self.headers)
         
     def __set_query(self, query):
-        if self.is_fdq and self.is_service:
+        # print(query)
+        if self.is_fdq and self.is_fdq_serive:
                 self.query="query="+query+"&sparql1_1=True"
         elif self.is_fdq:
                 self.query="""query="""+query
@@ -45,6 +53,7 @@ class SPARQLRequest():
             self.query=query
         else:
             self.query='default-graph-uri=&query={}'.format(quote(query))
+        # print(self.query)
         
     @timer                    
     def execute(self, query, config=None, join_stars_locally=None):
@@ -52,10 +61,23 @@ class SPARQLRequest():
         self.config = config
         try:
             if self.is_fdq and config:
+                print('is_fdq and config')
                 # print('FDQ')
                 self.response = run_query(query, config=config, join_stars_locally=join_stars_locally)
+            elif  self.is_fdq:
+                #print('is_fdq')
+                self.__set_params()
+                self.__set_query(query)
+                #print(self.url, self.headers, self.query)
+                response = requests.request("POST", self.url, headers=self.headers, data=self.query, stream=True)
+                if response.status_code == 200:
+                    print("Passed Query Status: {}".format(response.status_code))
+                    self.response = response
+                else:
+                    print("Failed Query: {}".format(response.content))
+                
             else:
-                # print('Non-FDQ')
+                print('Non-FDQ')
                 self.__set_params()
                 self.__set_query(query)
                 response = requests.request("POST", self.url, headers=self.headers, data=self.query, stream=True)
@@ -71,6 +93,9 @@ class SPARQLRequest():
     @timer
     def save(self, save_path, filename:str):
         try:
+            if self.is_fdq:
+                json_to_csv(self.response.json()['results']['bindings'], save_path, \
+                    filename, columns=[var+'.value' for var in self.response['head']['vars']])
             if self.is_fdq and self.config:
                 json_to_csv(self.response['results']['bindings'], save_path, \
                     filename, columns=[var+'.value' for var in self.response['head']['vars']])
