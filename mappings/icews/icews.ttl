@@ -17,7 +17,7 @@
 :Source
       # relative or absolute path w.r.t config file
       rml:source "data/icews/202201-icews-events_comma.csv";
-	  rml:referenceFormulation ql:CSV.
+      rml:referenceFormulation ql:CSV.
 
 :ICEWSEventMap a rr:TriplesMap;
     rml:logicalSource :Source;
@@ -32,11 +32,11 @@
         rr:objectMap [ rml:reference "Event Date"];
     ];
     
-	 rr:predicateObjectMap [
+    rr:predicateObjectMap [
         rr:predicate coy:hasSource;
         rr:objectMap [ rml:reference "Source Name"];
     ];
-	
+
     rr:predicateObjectMap [
         rr:predicate coy:hasSourceSectors;
         rr:objectMap [rml:reference "Source Sectors"];
