@@ -890,6 +890,7 @@ where {
 } 
 ```
 <img src="./images/hdi_hci.png"  width="600" height="200">
+
 ## [WorldBank Dashboard]( http://127.0.0.1:8896)
 
 <img src="./images/wb_dash.png"  width="800" height="400">
