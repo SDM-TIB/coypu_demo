@@ -486,7 +486,7 @@ Group By ?year
 ORDER BY ?year
 ```
 
-<img src="./images/gdp_carban.png"  width="600" height="200">
+<img src="./images/gdp_carban.png"  >
 
 #### Federated Query Example 2 - [Fatalities in Ukraine](https://dashboards.coypu.org/queries/241#541)
 
@@ -525,7 +525,7 @@ WHERE {
     BIND(year(?time) as ?year)}
 Group by ?year
 ```
-<img src="./images/fatal_ukr.png"  width="600" height="200">
+<img src="./images/fatal_ukr.png"  >
 
 #### Federated Query Example 3 - [Carbon Emission Vs Disaster Event in Germany](https://dashboards.coypu.org/queries/238#538)
 
@@ -567,7 +567,7 @@ GROUP BY ?year
 ORDER BY ?year
 ```
 
-<img src="./images/carbon_dis.png"  width="600" height="200">
+<img src="./images/carbon_dis.png"  >
 
 #### Federated Query Example 4 - [Average Life Expectancy(WorldBank Vs Wikidata) in year 2017 for different countries](https://dashboards.coypu.org/queries/239#539)
 
@@ -603,7 +603,7 @@ WHERE {
 GROUP BY ?country_code ?country_name ?year
 ORDER BY ?country_code
 ```
-<img src="./images/lifeexp_wiki_wb.png"  width="600" height="200">
+<img src="./images/lifeexp_wiki_wb.png"  >
 
 #### Federated Query Example 5 - [Population for different countries and their capital 2021 ](https://dashboards.coypu.org/queries/247/source#569)
 
@@ -695,7 +695,7 @@ where {
 }Group by ?year
 Order by ?year
 ```
-<img src="./images/pop_mig.png"  width="600" height="200">
+<img src="./images/pop_mig.png"  >
 
 #### Federated Query Example 7 - [GDP Growth in different years under different President of United States]()
 
@@ -799,7 +799,7 @@ where {
 } Group by ?president ?syear ?eyear
 ```
 
-<img src="./images/avggdp_usa.png"  width="600" height="200">
+<img src="./images/avggdp_usa.png"  >
 
 #### Federated Query Example 9 - [Population Growth and Fertility Rate in United States](https://dashboards.coypu.org/queries/250/source#568)
 
@@ -845,7 +845,7 @@ where {
 } 
 ```
 
-<img src="./images/pop_fer.png"  width="600" height="200">
+<img src="./images/pop_fer.png"  >
 
 #### Federated Query Example 10 - [Human Development Index vs Human Capital Index in Germany](https://dashboards.coypu.org/queries/251/source#572)
 
@@ -891,12 +891,12 @@ where {
     Bind(year(?time) as ?year)}
 } 
 ```
-<img src="./images/hdi_hci.png"  width="600" height="200">
+<img src="./images/hdi_hci.png"  >
 
 ## [WorldBank Dashboard]( http://127.0.0.1:8896)
 
-<img src="./images/wb_dash.png"  width="800" height="400">
-<img src="./images/wb_dash1.png"  width="800" height="400">
+<img src="./images/wb_dash.png"  >
+<img src="./images/wb_dash1.png" >
 
 
 ```python
