@@ -1,6 +1,5 @@
 # Knowledge Graph Creation Pipeline and Federated Query Engine
 
-
 ```python
 # Importing python packages to run demo - Third party packages
 import pandas as pd
@@ -29,44 +28,46 @@ pd.options.display.max_columns = 999
 pd.options.display.max_colwidth=None
 ```
 
-    
-
-
 # Knowledge Graph Creation Pipeline and Federated Query Engine
 
 ## Knowledge Graph Creation Pipeline
 
 ### Dataset
+
 - [WorldBank](https://www.worldbank.org/en/home)
 - [ICEWS](https://dataverse.harvard.edu/dataverse/icews) - Integrated Crisis Early Warning System
 - [GLEIF](https://www.gleif.org/en) -  Global Legal Entity Identifier Foundation
 - [Country Data](../data/country/countries_all_codes_and_wiki_dbp.csv)
 
 ### Ontology
+
 - [Coy-Ontology](https://coypu-project.gitlab.io/coy-documentation/)
 - [Others]()
 
 <img src="kg_creation.png"  width="600" height="200">
 
 ## [Dragoman](https://github.com/SDM-TIB/Dragoman)
+
 **An interpreter of functional mapping rules (defined in `RDF Mapping Language (RML)`) that interprets and transform the files into function-free mappings. These function mappings can be adopted by any RML-compliant Knowlege Graph creation engine (e.g. [SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer)).**
 
 Step to follow for using Dragoman:
-* [Install and Run Dragoman](https://github.com/SDM-TIB/Dragoman)
-* Create functional [Mapping](https://fno.io/spec/) (e.g. [Local-Country](../../mappings/country/country_codes_func.ttl) mapping file)  and [Config](../../configs/config_func.ini)) (e.g [Local-Config](../../configs/config_func.ini) file) files
-* Run [Dragoman](https://github.com/SDM-TIB/Dragoman) to convert functional mappings into function free mappings
-* Run [SDM-Rdfizer](##SDM-RDFizer) to convert data into RDF Knowledge Graph using function-free mappings
+
+- [Install and Run Dragoman](https://github.com/SDM-TIB/Dragoman)
+- Create functional [Mapping](https://fno.io/spec/) (e.g. [Local-Country](../../mappings/country/country_codes_func.ttl) mapping file)  and [Config](../../configs/config_func.ini)) (e.g [Local-Config](../../configs/config_func.ini) file) files
+- Run [Dragoman](https://github.com/SDM-TIB/Dragoman) to convert functional mappings into function free mappings
+- Run [SDM-Rdfizer]([[##SDM-RDFizer](https://github.com/SDM-TIB/Dragoman)](https://github.com/SDM-TIB/Dragoman)) to convert data into RDF Knowledge Graph using function-free mappings
 
 ## [SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer)
+
 **An interpreter of mapping rules (defined in `RDF Mapping Language (RML)` ) that allows the transformation of (un)structured data into RDF knowledge graphs. It provides efficient RML triple map execution for Big data. SDM-RDFizer supports (`CSV, JSON, RDB, XML`).**
 
 Step to create `Knowledge Graph` using SDM-Rdfizer:
-* [Install and Run SDM-Rdfizer](https://github.com/SDM-TIB/SDM-RDFizer/wiki/Install&Run)
-* Create [Mapping](https://rml.io/specs/rml/) (e.g. [Local-ICEWS](../../mappings/icews/icews.ttl) mapping file)  and [Config](https://github.com/SDM-TIB/SDM-RDFizer/wiki/The-Parameters-of-the-Configuration-file) (e.g [Local-Config](../../configs/config.ini) file) files
-* Sematify data using `rdfizer.semantify`
+
+- [Install and Run SDM-Rdfizer](https://github.com/SDM-TIB/SDM-RDFizer/wiki/Install&Run)
+- Create [Mapping](https://rml.io/specs/rml/) (e.g. [Local-ICEWS](../../mappings/icews/icews.ttl) mapping file)  and [Config](https://github.com/SDM-TIB/SDM-RDFizer/wiki/The-Parameters-of-the-Configuration-file) (e.g [Local-Config](../../configs/config.ini) file) files
+- Sematify data using `rdfizer.semantify`
 
 ### Example - How to semantify ICEWS dataset
-
 
 ```python
 %%time
@@ -85,12 +86,12 @@ semantify('../configs/config.ini')
     CPU times: user 14.7 s, sys: 544 ms, total: 15.2 s
     Wall time: 15.3 s
 
-
 ## [Creating Endpoint](../configs/docker_command_icews.sh)
 
 `Example ICEWS Endpoint`
 
 **Steps**
+
 - Load data to remote server
 - [Run Docker](../configs/docker_command_icews.sh) to create endpoint on TIB server(if you have permission)
 - [Endpoint](https://labs.tib.eu/sdm/icews_endpoint/sparql)
@@ -99,14 +100,13 @@ semantify('../configs/config.ini')
 
 - Integrates a federation of remote RDF knowledge graphs (heterogeneous data)
 - Unified interface to query a federation using SPARQL 1.1 protocol without service operation
-- List of RDF KGs : Public KG ([WorldBank](https://labs.tib.eu/sdm/worldbank_endpoint/sparql/), [Wikidata](https://query.wikidata.org/), [DBpedia](https://dbpedia.org/sparql), [ICEWS](https://labs.tib.eu/sdm/icews_endpoint/sparql), [GLEIF](https://labs.tib.eu/sdm/lei_endpoint/sparql), 
+- List of RDF KGs : Public KG ([WorldBank](https://labs.tib.eu/sdm/worldbank_endpoint/sparql/), [Wikidata](https://query.wikidata.org/), [DBpedia](https://dbpedia.org/sparql), [ICEWS](https://labs.tib.eu/sdm/icews_endpoint/sparql), [GLEIF](https://labs.tib.eu/sdm/lei_endpoint/sparql),
 [Skynet (Private KG)](https://skynet.coypu.org))
 - [How to run and configure it](https://github.com/SDM-TIB/DeTrusty)
 - [Detrusty Endpoint](https://labs.tib.eu/sdm/detrusty_coypu/sparql) to execute queries
 - [Detrusty Query Planner](https://labs.tib.eu/sdm/detrusty_coypu/query_plan)
 
 <img src="detrusty.png"  width="600" height="400">
-
 
 ```python
 # Checking status of endpoints
@@ -172,7 +172,6 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
 
 ```
 
-
     '############### Cmemc Endpoint ###############'
 
 
@@ -180,8 +179,6 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
     auth_type
     Passed Query Status: 200
     Total time taken by execute function: 0.40398335456848145
-
-
 
 <div>
 <style scoped>
@@ -235,8 +232,6 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
 </table>
 </div>
 
-
-
     '############### Skynet Endpoint ###############'
 
 
@@ -244,8 +239,6 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
     auth_type
     Passed Query Status: 200
     Total time taken by execute function: 0.0829010009765625
-
-
 
 <div>
 <style scoped>
@@ -299,8 +292,6 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
 </table>
 </div>
 
-
-
     '############### Worldbank Endpoint ###############'
 
 
@@ -311,8 +302,6 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
 
 
     200
-
-
 
 <div>
 <style scoped>
@@ -366,16 +355,12 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
 </table>
 </div>
 
-
-
     '############### ICEWS Endpoint ###############'
 
 
     Non-FDQ
     Passed Query Status: 200
     Total time taken by execute function: 0.06499743461608887
-
-
 
 <div>
 <style scoped>
@@ -429,16 +414,12 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
 </table>
 </div>
 
-
-
     '############### Detrusty Endpoint ###############'
 
 
     auth_type and is_fdq
     Passed Query Status: 200
     Total time taken by execute function: 0.8539445400238037
-
-
 
 <div>
 <style scoped>
@@ -510,10 +491,9 @@ display(pd.json_normalize(detrusty_request.response.json()['results']['bindings'
 </table>
 </div>
 
-
 ### Examples
 
-### Federated Query Example 1 - [GDP Per Capita Vs Carbon Emission Per Capita in Germany](https://dashboards.coypu.org/queries/240#540)
+#### Federated Query Example 1 - [GDP Per Capita Vs Carbon Emission Per Capita in Germany](https://dashboards.coypu.org/queries/240#540)
 
 ```sparql
 PREFIX wb: <http://worldbank.org/>
@@ -565,9 +545,9 @@ WHERE {
     BIND(year(?time) AS ?year)}
 Group By ?year
 ORDER BY ?year
+```
 
-
-### Federated Query Example 2 - [Fatalities in Ukraine](https://dashboards.coypu.org/queries/241#541)
+#### Federated Query Example 2 - [Fatalities in Ukraine](https://dashboards.coypu.org/queries/241#541)
 
 ```sparql
 PREFIX coy: <https://schema.coypu.org/global#>
@@ -603,9 +583,9 @@ WHERE {
     ?itemP ps:P1082 ?population .
     BIND(year(?time) as ?year)}
 Group by ?year
+```
 
-
-### Federated Query Example 3 - [Carbon Emission Vs Disaster Event in Germany](https://dashboards.coypu.org/queries/238#538)
+#### Federated Query Example 3 - [Carbon Emission Vs Disaster Event in Germany](https://dashboards.coypu.org/queries/238#538)
 
 ```sparql
 PREFIX co: <http://purl.org/ontology/co/core#>
@@ -643,9 +623,9 @@ WHERE {
     ?country_code_uri coy:hasIsoCode 'DEU'.}
 GROUP BY ?year
 ORDER BY ?year
+```
 
-
-### Federated Query Example 4 - [Average Life Expectancy(WorldBank Vs Wikidata) in year 2017 for different countries](https://dashboards.coypu.org/queries/239#539)
+#### Federated Query Example 4 - [Average Life Expectancy(WorldBank Vs Wikidata) in year 2017 for different countries](https://dashboards.coypu.org/queries/239#539)
 
 ```Sparql
 PREFIX wb: <http://worldbank.org/>
@@ -678,9 +658,9 @@ WHERE {
     Filter(?year=2017)}
 GROUP BY ?country_code ?country_name ?year
 ORDER BY ?country_code
+```
 
-
-### Federated Query Example 5 - [Population for different countries and their capital 2021 ](https://dashboards.coypu.org/queries/247/source#569)
+#### Federated Query Example 5 - [Population for different countries and their capital 2021 ](https://dashboards.coypu.org/queries/247/source#569)
 
 ```Sparql
 PREFIX wb: <http://worldbank.org/>
@@ -724,9 +704,9 @@ WHERE {
     ?capital wdt:P625 ?gps .
     BIND(year(?time) as ?year)
 }Order by ?code
+```
 
-
-### Federated Query Example 6 - [Population and Net Migration for United Kingdom](https://dashboards.coypu.org/queries/248/source#560)
+#### Federated Query Example 6 - [Population and Net Migration for United Kingdom](https://dashboards.coypu.org/queries/248/source#560)
 
 ```Sparql
 PREFIX wd: <http://www.wikidata.org/entity/>
@@ -769,9 +749,9 @@ where {
   
 }Group by ?year
 Order by ?year
+```
 
-
-### Federated Query Example 7 - [GDP Growth in different years under different President of United States]()
+#### Federated Query Example 7 - [GDP Growth in different years under different President of United States]()
 
 ```Sparql
 PREFIX wd: <http://www.wikidata.org/entity/>
@@ -820,9 +800,9 @@ where {
     }
   filter(?year>=?syear && ?year<=?eyear)
 }
+```
 
-
-### Federated Query Example 8 - [Avg GDP Growth under different President of United States](https://dashboards.coypu.org/queries/249/source#564)
+#### Federated Query Example 8 - [Avg GDP Growth under different President of United States](https://dashboards.coypu.org/queries/249/source#564)
 
 ```Sparql
 PREFIX wd: <http://www.wikidata.org/entity/>
@@ -871,9 +851,9 @@ where {
     }
   filter(?year>=?syear && ?year<=?eyear)
 } Group by ?president ?syear ?eyear
+```
 
-
-### Federated Query Example 9 - [Population Growth and Fertility Rate in United States](https://dashboards.coypu.org/queries/250/source#568)
+#### Federated Query Example 9 - [Population Growth and Fertility Rate in United States](https://dashboards.coypu.org/queries/250/source#568)
 
 ```Sparql
 PREFIX wd: <http://www.wikidata.org/entity/>
@@ -915,9 +895,9 @@ where {
     ?itemP pq:P585 ?time.
     Bind(year(?time) as ?year)}
 } 
+```
 
-
-### Federated Query Example 10 - [Human Development Index vs Human Capital Index in Germany](https://dashboards.coypu.org/queries/251/source#572)
+#### Federated Query Example 10 - [Human Development Index vs Human Capital Index in Germany](https://dashboards.coypu.org/queries/251/source#572)
 
 ```Sparql
 PREFIX wd: <http://www.wikidata.org/entity/>
@@ -960,7 +940,7 @@ where {
     ?hdi_iri pq:P585 ?time.
     Bind(year(?time) as ?year)}
 } 
-
+```
 
 ## [WorldBank Dashboard]( http://127.0.0.1:8896)
 
@@ -1048,34 +1028,9 @@ def update_graph(country_name, xaxis_column_name, yaxis_column_name,
 app.run(debug=False, port='8896')
 ```
 
-     * Serving Flask app '__main__'
-     * Debug mode: off
-
-
-    [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
-     * Running on http://127.0.0.1:8896
-    [33mPress CTRL+C to quit[0m
-    127.0.0.1 - - [14/Mar/2023 14:43:00] "[35m[1mPOST /_dash-update-component HTTP/1.1[0m" 500 -
-    127.0.0.1 - - [14/Mar/2023 14:43:05] "POST /_dash-update-component HTTP/1.1" 200 -
-
-
-    If Executed
-
-
-    127.0.0.1 - - [14/Mar/2023 14:45:46] "GET / HTTP/1.1" 200 -
-    127.0.0.1 - - [14/Mar/2023 14:45:46] "GET /_dash-layout HTTP/1.1" 200 -
-    127.0.0.1 - - [14/Mar/2023 14:45:46] "GET /_dash-dependencies HTTP/1.1" 200 -
-    127.0.0.1 - - [14/Mar/2023 14:45:46] "[36mGET /_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
-    127.0.0.1 - - [14/Mar/2023 14:45:46] "[36mGET /_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
-    127.0.0.1 - - [14/Mar/2023 14:45:46] "[36mGET /_dash-component-suites/dash/dcc/async-slider.js HTTP/1.1[0m" 304 -
-    127.0.0.1 - - [14/Mar/2023 14:45:46] "[36mGET /_dash-component-suites/dash/dcc/async-plotlyjs.js HTTP/1.1[0m" 304 -
-    127.0.0.1 - - [14/Mar/2023 14:45:47] "POST /_dash-update-component HTTP/1.1" 200 -
-
-
-    If Executed
-
-
-
-```python
-
+```shell
+Serving Flask app '__main__'
+Debug mode: off
+This is a development server. Do not use it in a production deployment. Use a production WSGI server instead
+Running on http://127.0.0.1:8896
 ```
