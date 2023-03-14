@@ -844,7 +844,9 @@ where {
     Bind(year(?time) as ?year)}
 } 
 ```
+
 <img src="./images/pop_fer.png"  width="600" height="200">
+
 #### Federated Query Example 10 - [Human Development Index vs Human Capital Index in Germany](https://dashboards.coypu.org/queries/251/source#572)
 
 ```Sparql
