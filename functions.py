@@ -6,6 +6,9 @@ import time
 import functools
 from os.path import join
 import json
+from dash import Dash, dcc, html, Input, Output
+import plotly.express as px
+import numpy as np
 
 def replace(self, updated_file: str, replace: dict = {'\'': ''},
             header: bool = False, index=False):
@@ -97,4 +100,63 @@ def create_dataset(dataset_dict:dict, url:str, user_token):
     except requests.exceptions.RequestException as e:
         print("ERROR ACCESSING API: ", API_URL, e.__str__())
     return response.json()
+
+
+def worldbank_layout(df, app):
+    app.layout = html.Div([
+        html.Div([
+
+            html.Div([
+                dcc.Dropdown(
+                    np.insert(df['Country Name'].unique(), 0, 'All Countries'),
+                    'All Countries',
+                    id='country-name',
+                    multi=True,
+                    searchable=True,
+                ),
+            ], style={'width': '30%', 'display': 'inline-block'}),
+
+            html.Div([
+                dcc.Dropdown(
+                    df['Indicator Name'].unique(),
+                    'Fertility rate, total (births per woman)',
+                    id='xaxis-column'
+                ),
+                dcc.RadioItems(
+                    ['Linear', 'Log'],
+                    'Linear',
+                    id='xaxis-type',
+                    inline=True
+                )
+            ], style={'width': '30%', 'display': 'inline-block'}),
+
+
+            html.Div([
+                dcc.Dropdown(
+                    df['Indicator Name'].unique(),
+                    'Life expectancy at birth, total (years)',
+                    id='yaxis-column'
+                ),
+                dcc.RadioItems(
+                    ['Linear', 'Log'],
+                    'Linear',
+                    id='yaxis-type',
+                    inline=True
+                )
+            ], style={'width': '30%', 'display': 'inline-block'})
+        ]),
+
+        dcc.Graph(id='indicator-graphic'),
+
+        dcc.RangeSlider(
+            min=df['Year'].min(), 
+            max=df['Year'].max(), 
+            step=5, 
+            value=[df['Year'].min()+10, df['Year'].max()-10], 
+            id='year-range-slider',
+            marks={str(year): str(year) for year in df['Year'].unique()},
+        )
+    ])
+    return app
+
 
