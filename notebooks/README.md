@@ -44,7 +44,7 @@ pd.options.display.max_colwidth=None
 - [Coy-Ontology](https://coypu-project.gitlab.io/coy-documentation/)
 - [Others]()
 
-<img src="./images/kg_creation.png"  width="600" height="200">
+<img src="./images/kg_creation.png" >
 
 ## [Dragoman](https://github.com/SDM-TIB/Dragoman)
 
@@ -106,7 +106,7 @@ semantify('../configs/config.ini')
 - [Detrusty Endpoint](https://labs.tib.eu/sdm/detrusty_coypu/sparql) to execute queries
 - [Detrusty Query Planner](https://labs.tib.eu/sdm/detrusty_coypu/query_plan)
 
-<img src="./images/detrusty.png"  width="600" height="400">
+<img src="./images/detrusty.png">
 
 ```python
 # Checking status of endpoints
