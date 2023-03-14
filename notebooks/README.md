@@ -53,7 +53,7 @@ pd.options.display.max_colwidth=None
 Step to follow for using Dragoman:
 
 - [Install and Run Dragoman](https://github.com/SDM-TIB/Dragoman)
-- Create functional [Mapping](https://fno.io/spec/) (e.g. [Local-Country](../../mappings/country/country_codes_func.ttl) mapping file)  and [Config](../../configs/config_func.ini)) (e.g [Local-Config](../../configs/config_func.ini) file) files
+- Create functional [Mapping](https://fno.io/spec/) (e.g. [Local-Country](../mappings/country/country_codes_func.ttl) mapping file)  and [Config](../configs/config_func.ini)) (e.g [Local-Config](../configs/config_func.ini) file) files
 - Run [Dragoman](https://github.com/SDM-TIB/Dragoman) to convert functional mappings into function free mappings
 - Run [SDM-Rdfizer]([[##SDM-RDFizer](https://github.com/SDM-TIB/Dragoman)](https://github.com/SDM-TIB/Dragoman)) to convert data into RDF Knowledge Graph using function-free mappings
 
@@ -64,7 +64,7 @@ Step to follow for using Dragoman:
 Step to create `Knowledge Graph` using SDM-Rdfizer:
 
 - [Install and Run SDM-Rdfizer](https://github.com/SDM-TIB/SDM-RDFizer/wiki/Install&Run)
-- Create [Mapping](https://rml.io/specs/rml/) (e.g. [Local-ICEWS](../../mappings/icews/icews.ttl) mapping file)  and [Config](https://github.com/SDM-TIB/SDM-RDFizer/wiki/The-Parameters-of-the-Configuration-file) (e.g [Local-Config](../../configs/config.ini) file) files
+- Create [Mapping](https://rml.io/specs/rml/) (e.g. [Local-ICEWS](../mappings/icews/icews.ttl) mapping file)  and [Config](https://github.com/SDM-TIB/SDM-RDFizer/wiki/The-Parameters-of-the-Configuration-file) (e.g [Local-Config](../configs/config.ini) file) files
 - Sematify data using `rdfizer.semantify`
 
 ### Example - How to semantify ICEWS dataset
@@ -883,8 +883,8 @@ where {
 
 ## [WorldBank Dashboard]( http://127.0.0.1:8896)
 
-<img src="wb_dash.png"  width="600" height="400">
-<img src="wb_dash1.png"  width="600" height="400">
+<img src="wb_dash.png"  width="800" height="400">
+<img src="wb_dash1.png"  width="800" height="400">
 
 
 ```python
